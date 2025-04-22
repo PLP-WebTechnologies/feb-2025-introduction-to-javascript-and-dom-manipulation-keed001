@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edwin Trial</title>
+  <style>
+    /* Initial CSS styles */
+    .dynamic-text {
+      color: blue;
+      font-size: 18px;
+    }
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>This is My Dynamic Page</h1>
+  </header>
+
+  <main>
+    <section>
+      <p id="text" class="dynamic-text">Edwin the Guru.</p>
+      <button id="change-text-btn">Change Text</button>
+    </section>
+
+    <section>
+      <button id="toggle-element-btn">Add/Remove Element</button>
+      <div id="container">
+        <!-- Placeholder for adding or removing content -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Edwin</p>
+  </footer>
+
+  <script>
+    // Dynamically change text content and modify styles
+    document.getElementById("change-text-btn").addEventListener("click", function() {
+      const textElement = document.getElementById("text");
+      textElement.textContent = "Bravo!! the text content has been updated";
+      textElement.classList.toggle("highlight");
+    });
+
+    // Add or remove an element dynamically
+    document.getElementById("toggle-element-btn").addEventListener("click", function() {
+      const container = document.getElementById("container");
+      const existingElement = document.getElementById("dynamic-element");
+
+      if (existingElement) {
+        container.removeChild(existingElement); // Remove the element if it exists
+      } else {
+        const newElement = document.createElement("p");
+        newElement.id = "dynamic-element";
+        newElement.textContent = "A new element has been added!";
+        container.appendChild(newElement); // Add the new element
+      }
+    });
+  </script>
+</body>
+</html>
