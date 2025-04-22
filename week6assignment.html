@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edim</title>
+    <style>
+        #dynamic-text {
+            font-size: 20px;
+            color: blue;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edwin Properties Limited</h1>
+    <p id="dynamic-text">We have properties in Kenya!</p>
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="toggleStyle()">Toggle Highlight</button>
+    <button onclick="addRemoveElement()">Add/Remove Element</button>
+
+    <script>
+        function changeText() {
+            const textElement = document.getElementById('dynamic-text');
+            textElement.textContent = 'These are additional properties in Africa';
+        }
+
+        function toggleStyle() {
+            const textElement = document.getElementById('dynamic-text');
+            textElement.classList.toggle('highlight');
+        }
+
+        function addRemoveElement() {
+            const existingElement = document.getElementById('new-element');
+            if (existingElement) {
+                existingElement.remove();
+            } else {
+                const newElement = document.createElement('p');
+                newElement.id = 'new-element';
+                newElement.textContent = 'This is a newly added property listing!';
+                document.body.appendChild(newElement);
+            }
+        }
+    </script>
+</body>
+</html>
